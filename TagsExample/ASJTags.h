@@ -26,7 +26,3 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 - (void)setDeleteBlock:(TagBlock)deleteBlock;
 
 @end
-
-#warning add horizontal and vertical support!
-#warning add support for adding custom view
-#warning add customisation options for tag view
