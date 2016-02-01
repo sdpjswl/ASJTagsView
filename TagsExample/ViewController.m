@@ -7,18 +7,18 @@
 //
 
 #import "ViewController.h"
-#import "TagView.h"
+#import "ASJTags.h"
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIScrollView *tagsScrollView;
+@property (weak, nonatomic) IBOutlet ASJTags *tagsView;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
-@property (weak, nonatomic) TagView *tagView;
-@property (copy, nonatomic) NSArray *tags;
+@property (weak, nonatomic) NSNotificationCenter *notificationCenter;
 
 - (void)setup;
+- (void)listenForOrientationChanges;
+- (void)handleTagBlocks;
 - (IBAction)addTapped:(id)sender;
-- (void)reloadTagsView;
 
 @end
 
@@ -39,58 +39,53 @@
 
 - (void)setup
 {
-  _tags = [[NSArray alloc] init];
+  [self listenForOrientationChanges];
+  [self handleTagBlocks];
 }
+
+#pragma mark - Orientation
+
+- (void)listenForOrientationChanges
+{
+  [self.notificationCenter addObserverForName:UIDeviceOrientationDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note)
+   {
+     [_tagsView reloadTagsView];
+   }];
+}
+
+- (void)dealloc
+{
+  [self.notificationCenter removeObserver:self];
+}
+
+- (NSNotificationCenter *)notificationCenter
+{
+  return [NSNotificationCenter defaultCenter];
+}
+
+#pragma mark - Tag blocks
+
+- (void)handleTagBlocks
+{
+  [_tagsView setTapBlock:^(NSString *tagText, NSInteger idx)
+   {
+     NSString *message = [NSString stringWithFormat:@"You tapped: %@", tagText];
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tap!" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+     [alert show];
+   }];
+  
+  [_tagsView setDeleteBlock:^(NSString *tagText, NSInteger idx)
+  {
+    [_tagsView deleteTagAtIndex:idx];
+  }];
+}
+
+#pragma mark - IBAction
 
 - (IBAction)addTapped:(id)sender
 {
-  NSMutableArray *temp = _tags.mutableCopy;
-  [temp addObject:_inputTextField.text];
-  _tags = [NSArray arrayWithArray:temp];
-  [self reloadTagsView];
-}
-
-#pragma mark - Tags view
-
-- (void)reloadTagsView
-{
-  CGFloat padding = 5.0;
-  CGFloat x = padding;
-  CGFloat y = padding;
-  CGFloat containerWidth = _tagsScrollView.bounds.size.width;
-  
-  for (NSString *tag in _tags)
-  {
-    TagView *tagView = self.tagView;
-    tagView.taglabel.text = tag;
-    CGSize size = [tagView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize
-                         withHorizontalFittingPriority:UILayoutPriorityDefaultHigh
-                               verticalFittingPriority:UILayoutPriorityFittingSizeLevel];
-    CGRect rect = tagView.frame;
-    rect.origin = CGPointMake(x, y);
-    rect.size = size;
-    tagView.frame = rect;
-    
-    x += (size.width + padding);
-    if (x >= containerWidth - padding)
-    {
-      x = padding;
-      y += size.height + padding;
-      
-      CGRect rect = tagView.frame;
-      rect.origin = CGPointMake(x, y);
-      rect.size = size;
-      tagView.frame = rect;
-      
-      x += (size.width + padding);
-    }
-    [_tagsScrollView addSubview:tagView];
-  }
-}
-
-- (TagView *)tagView
-{
-  return (TagView *)[[NSBundle mainBundle] loadNibNamed:@"TagView" owner:self options:nil][0];
+  NSString *tagText = _inputTextField.text;
+  [_tagsView addTag:tagText];
 }
 
 @end

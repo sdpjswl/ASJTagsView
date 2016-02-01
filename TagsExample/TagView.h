@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class TagView;
+
+typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
+
 @interface TagView : UIView
 
-@property (weak, nonatomic) IBOutlet UILabel *taglabel;
+@property (copy, nonatomic) NSString *tagText;
+@property (copy) TagBlock tapBlock;
+@property (copy) TagBlock deleteBlock;
+
+- (void)setTapBlock:(TagBlock)tapBlock;
+- (void)setDeleteBlock:(TagBlock)deleteBlock;
 
 @end

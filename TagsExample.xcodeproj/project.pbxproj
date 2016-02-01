@@ -13,20 +13,10 @@
 		6B3C71181C5C91690090D471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3C71161C5C91690090D471 /* Main.storyboard */; };
 		6B3C711A1C5C91690090D471 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B3C71191C5C91690090D471 /* Images.xcassets */; };
 		6B3C711D1C5C91690090D471 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3C711B1C5C91690090D471 /* LaunchScreen.xib */; };
-		6B3C71291C5C91690090D471 /* TagsExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C71281C5C91690090D471 /* TagsExampleTests.m */; };
 		6B3C71331C5C97100090D471 /* TagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B3C71321C5C97100090D471 /* TagView.xib */; };
 		6B3C71361C5C97EB0090D471 /* TagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C71351C5C97EB0090D471 /* TagView.m */; };
+		6BA7A6681C5F460A008B47FA /* ASJTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA7A6671C5F460A008B47FA /* ASJTags.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		6B3C71231C5C91690090D471 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6B3C71011C5C91690090D471 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6B3C71081C5C91690090D471;
-			remoteInfo = TagsExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6B3C71091C5C91690090D471 /* TagsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TagsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,23 +29,15 @@
 		6B3C71171C5C91690090D471 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B3C71191C5C91690090D471 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6B3C711C1C5C91690090D471 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		6B3C71221C5C91690090D471 /* TagsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TagsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B3C71271C5C91690090D471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B3C71281C5C91690090D471 /* TagsExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagsExampleTests.m; sourceTree = "<group>"; };
 		6B3C71321C5C97100090D471 /* TagView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagView.xib; sourceTree = "<group>"; };
 		6B3C71341C5C97EB0090D471 /* TagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagView.h; sourceTree = "<group>"; };
 		6B3C71351C5C97EB0090D471 /* TagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagView.m; sourceTree = "<group>"; };
+		6BA7A6661C5F460A008B47FA /* ASJTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASJTags.h; sourceTree = "<group>"; };
+		6BA7A6671C5F460A008B47FA /* ASJTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASJTags.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6B3C71061C5C91690090D471 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6B3C711F1C5C91690090D471 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				6B3C710B1C5C91690090D471 /* TagsExample */,
-				6B3C71251C5C91690090D471 /* TagsExampleTests */,
 				6B3C710A1C5C91690090D471 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				6B3C71091C5C91690090D471 /* TagsExample.app */,
-				6B3C71221C5C91690090D471 /* TagsExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +71,8 @@
 				6B3C71131C5C91690090D471 /* ViewController.h */,
 				6B3C71141C5C91690090D471 /* ViewController.m */,
 				6B3C71161C5C91690090D471 /* Main.storyboard */,
+				6BA7A6661C5F460A008B47FA /* ASJTags.h */,
+				6BA7A6671C5F460A008B47FA /* ASJTags.m */,
 				6B3C71341C5C97EB0090D471 /* TagView.h */,
 				6B3C71351C5C97EB0090D471 /* TagView.m */,
 				6B3C71321C5C97100090D471 /* TagView.xib */,
@@ -106,23 +88,6 @@
 			children = (
 				6B3C710D1C5C91690090D471 /* Info.plist */,
 				6B3C710E1C5C91690090D471 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6B3C71251C5C91690090D471 /* TagsExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				6B3C71281C5C91690090D471 /* TagsExampleTests.m */,
-				6B3C71261C5C91690090D471 /* Supporting Files */,
-			);
-			path = TagsExampleTests;
-			sourceTree = "<group>";
-		};
-		6B3C71261C5C91690090D471 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6B3C71271C5C91690090D471 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -147,39 +112,17 @@
 			productReference = 6B3C71091C5C91690090D471 /* TagsExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6B3C71211C5C91690090D471 /* TagsExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6B3C712F1C5C91690090D471 /* Build configuration list for PBXNativeTarget "TagsExampleTests" */;
-			buildPhases = (
-				6B3C711E1C5C91690090D471 /* Sources */,
-				6B3C711F1C5C91690090D471 /* Frameworks */,
-				6B3C71201C5C91690090D471 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6B3C71241C5C91690090D471 /* PBXTargetDependency */,
-			);
-			name = TagsExampleTests;
-			productName = TagsExampleTests;
-			productReference = 6B3C71221C5C91690090D471 /* TagsExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6B3C71011C5C91690090D471 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = sudeep;
 				TargetAttributes = {
 					6B3C71081C5C91690090D471 = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					6B3C71211C5C91690090D471 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 6B3C71081C5C91690090D471;
 					};
 				};
 			};
@@ -197,7 +140,6 @@
 			projectRoot = "";
 			targets = (
 				6B3C71081C5C91690090D471 /* TagsExample */,
-				6B3C71211C5C91690090D471 /* TagsExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -214,13 +156,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B3C71201C5C91690090D471 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -231,27 +166,12 @@
 				6B3C71151C5C91690090D471 /* ViewController.m in Sources */,
 				6B3C71121C5C91690090D471 /* AppDelegate.m in Sources */,
 				6B3C710F1C5C91690090D471 /* main.m in Sources */,
+				6BA7A6681C5F460A008B47FA /* ASJTags.m in Sources */,
 				6B3C71361C5C97EB0090D471 /* TagView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B3C711E1C5C91690090D471 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6B3C71291C5C91690090D471 /* TagsExampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6B3C71241C5C91690090D471 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6B3C71081C5C91690090D471 /* TagsExample */;
-			targetProxy = 6B3C71231C5C91690090D471 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6B3C71161C5C91690090D471 /* Main.storyboard */ = {
@@ -293,6 +213,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -356,6 +277,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = TagsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ascent.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -367,41 +289,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = TagsExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ascent.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		6B3C71301C5C91690090D471 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TagsExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TagsExample.app/TagsExample";
-			};
-			name = Debug;
-		};
-		6B3C71311C5C91690090D471 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TagsExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TagsExample.app/TagsExample";
 			};
 			name = Release;
 		};
@@ -424,14 +313,7 @@
 				6B3C712E1C5C91690090D471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		6B3C712F1C5C91690090D471 /* Build configuration list for PBXNativeTarget "TagsExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6B3C71301C5C91690090D471 /* Debug */,
-				6B3C71311C5C91690090D471 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
