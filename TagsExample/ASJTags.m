@@ -2,7 +2,7 @@
 //  ASJTags.m
 //  TagsExample
 //
-//  Created by ABS_MAC02 on 2/1/16.
+//  Created by sudeep on 2/1/16.
 //  Copyright (c) 2016 sudeep. All rights reserved.
 //
 
@@ -94,52 +94,51 @@
 
 - (void)addTags
 {
-  CGFloat padding = 5.0;
-  CGFloat x = padding;
-  CGFloat y = padding;
-  CGFloat containerWidth = self.bounds.size.width;
+  __block CGFloat padding = 5.0;
+  __block CGFloat x = padding;
+  __block CGFloat y = padding;
+  __block CGFloat containerWidth = self.bounds.size.width;
   
-  for (NSString *tag in _tags)
-  {
-    NSInteger idx = [_tags indexOfObject:tag];
-    TagView *tagView = self.tagView;
-    tagView.tagText = tag;
-    tagView.tag = idx;
-    
-    CGSize size = [tagView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize
-                         withHorizontalFittingPriority:UILayoutPriorityFittingSizeLevel
-                               verticalFittingPriority:UILayoutPriorityFittingSizeLevel];
-    
-    CGFloat maxWidth = containerWidth - (2 * padding);
-    if (size.width > maxWidth) {
-      size = CGSizeMake(maxWidth, size.height);
-    }
-    
-    CGRect rect = tagView.frame;
-    rect.origin = CGPointMake(x, y);
-    rect.size = size;
-    tagView.frame = rect;
-    
-    x += (size.width + padding);
-    if (x >= containerWidth - padding)
-    {
-      x = padding;
-      y += size.height + padding;
-      
-      CGRect rect = tagView.frame;
-      rect.origin = CGPointMake(x, y);
-      rect.size = size;
-      tagView.frame = rect;
-      
-      x += (size.width + padding);
-    }
-    
-    [self addSubview:tagView];
-    
-    // content size
-    CGFloat bottom = tagView.frame.origin.y + tagView.frame.size.height + padding;
-    self.contentSize = CGSizeMake(containerWidth, bottom);
-  }
+  [_tags enumerateObjectsUsingBlock:^(NSString *tag, NSUInteger idx, BOOL *stop)
+   {
+     TagView *tagView = self.tagView;
+     tagView.tagText = tag;
+     tagView.tag = idx;
+     
+     CGSize size = [tagView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize
+                          withHorizontalFittingPriority:UILayoutPriorityFittingSizeLevel
+                                verticalFittingPriority:UILayoutPriorityFittingSizeLevel];
+     
+     CGFloat maxWidth = containerWidth - (2 * padding);
+     if (size.width > maxWidth) {
+       size = CGSizeMake(maxWidth, size.height);
+     }
+     
+     CGRect rect = tagView.frame;
+     rect.origin = CGPointMake(x, y);
+     rect.size = size;
+     tagView.frame = rect;
+     x += (size.width + padding);
+     
+     if ((x >= containerWidth - padding) && (idx > 0))
+     {
+       x = padding;
+       y += size.height + padding;
+       
+       CGRect rect = tagView.frame;
+       rect.origin = CGPointMake(x, y);
+       rect.size = size;
+       tagView.frame = rect;
+       
+       x += (size.width + padding);
+     }
+     
+     [self addSubview:tagView];
+     
+     // content size
+     CGFloat bottom = tagView.frame.origin.y + tagView.frame.size.height + padding;
+     self.contentSize = CGSizeMake(containerWidth, bottom);
+   }];
 }
 
 - (TagView *)tagView
