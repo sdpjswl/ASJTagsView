@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="GU3-78-Bdh" customClass="TagView">
+        <view contentMode="scaleToFill" id="GU3-78-Bdh" customClass="ASJTagView">
             <rect key="frame" x="0.0" y="0.0" width="105" height="45"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAg-JO-aHz">
-                    <rect key="frame" x="58" y="0.0" width="47" height="45"/>
-                    <color key="backgroundColor" red="0.59927262930000003" green="0.72925646550000001" blue="0.0" alpha="0.70340203899999998" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="60" y="0.0" width="45" height="45"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="pAg-JO-aHz" secondAttribute="height" multiplier="47:45" id="25t-l3-98e"/>
+                        <constraint firstAttribute="width" secondItem="pAg-JO-aHz" secondAttribute="height" multiplier="1:1" id="25t-l3-98e"/>
                         <constraint firstAttribute="width" secondItem="pAg-JO-aHz" secondAttribute="height" multiplier="1:1" id="O2J-rN-LbC"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="x">
+                        <color key="titleColor" red="0.090196078430000007" green="0.63137254899999995" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="default">
@@ -32,10 +33,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-QH-zbm">
-                    <rect key="frame" x="5" y="0.0" width="48" height="45"/>
+                    <rect key="frame" x="8" y="0.0" width="52" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Tag">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -46,22 +47,22 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.72156864399999998" blue="0.21568629149999999" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
-                <constraint firstItem="cfm-QH-zbm" firstAttribute="leading" secondItem="GU3-78-Bdh" secondAttribute="leading" constant="5" id="Ccb-hY-eqd"/>
+                <constraint firstItem="cfm-QH-zbm" firstAttribute="leading" secondItem="GU3-78-Bdh" secondAttribute="leading" constant="8" id="Ccb-hY-eqd"/>
                 <constraint firstAttribute="bottom" secondItem="cfm-QH-zbm" secondAttribute="bottom" id="aXf-fT-9km"/>
                 <constraint firstAttribute="trailing" secondItem="pAg-JO-aHz" secondAttribute="trailing" id="ehn-lo-bXF"/>
                 <constraint firstItem="cfm-QH-zbm" firstAttribute="top" secondItem="GU3-78-Bdh" secondAttribute="top" id="hZH-ES-khF"/>
                 <constraint firstAttribute="bottom" secondItem="pAg-JO-aHz" secondAttribute="bottom" id="him-Yv-Ad4"/>
-                <constraint firstItem="pAg-JO-aHz" firstAttribute="leading" secondItem="cfm-QH-zbm" secondAttribute="trailing" constant="5" id="mTI-IY-UcA"/>
+                <constraint firstItem="pAg-JO-aHz" firstAttribute="leading" secondItem="cfm-QH-zbm" secondAttribute="trailing" id="mTI-IY-UcA"/>
                 <constraint firstItem="pAg-JO-aHz" firstAttribute="top" secondItem="GU3-78-Bdh" secondAttribute="top" id="xHl-TD-HaZ"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="deleteButton" destination="pAg-JO-aHz" id="bs9-3f-al0"/>
                 <outlet property="tagButton" destination="cfm-QH-zbm" id="S9V-Tt-FB6"/>
             </connections>
-            <point key="canvasLocation" x="370.5" y="295.5"/>
+            <point key="canvasLocation" x="363.5" y="353.5"/>
         </view>
     </objects>
 </document>

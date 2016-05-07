@@ -7,11 +7,13 @@
 //
 
 #import "ASJTags.h"
-#import "TagView.h"
+#import "ASJTagView.h"
+
+#define kDefaultTagsColor [UIColor colorWithRed:60.0f/255.0 green:130.0f/255.0 blue:170.0f/255.0 alpha:1.0f]
 
 @interface ASJTags ()
 
-@property (weak, nonatomic) TagView *tagView;
+@property (weak, nonatomic) ASJTagView *tagView;
 @property (copy, nonatomic) NSArray *tags;
 
 - (void)setup;
@@ -45,6 +47,11 @@
 - (void)setup
 {
   _tags = [[NSArray alloc] init];
+  _tagColor = kDefaultTagsColor;
+  _tagTextColor = [UIColor whiteColor];
+  _crossColor = [UIColor whiteColor];
+  _cornerRadius = 4.0f;
+  _tagSpacing = 8.0f;
 }
 
 #pragma mark - Public
@@ -85,7 +92,7 @@
 {
   for (id view in self.subviews)
   {
-    if (![view isKindOfClass:[TagView class]]) {
+    if (![view isKindOfClass:[ASJTagView class]]) {
       continue;
     }
     [view removeFromSuperview];
@@ -94,14 +101,14 @@
 
 - (void)addTags
 {
-  __block CGFloat padding = 5.0;
+  __block CGFloat padding = _tagSpacing;
   __block CGFloat x = padding;
   __block CGFloat y = padding;
   __block CGFloat containerWidth = self.bounds.size.width;
   
   [_tags enumerateObjectsUsingBlock:^(NSString *tag, NSUInteger idx, BOOL *stop)
    {
-     TagView *tagView = self.tagView;
+     ASJTagView *tagView = self.tagView;
      tagView.tagText = tag;
      tagView.tag = idx;
      
@@ -141,9 +148,15 @@
    }];
 }
 
-- (TagView *)tagView
+- (ASJTagView *)tagView
 {
-  TagView *tagView = (TagView *)[[NSBundle mainBundle] loadNibNamed:@"TagView" owner:self options:nil][0];
+  ASJTagView *tagView = (ASJTagView *)[[NSBundle mainBundle] loadNibNamed:@"ASJTagView" owner:self options:nil][0];
+  
+  tagView.backgroundColor = _tagColor;
+  tagView.tagTextColor = _tagTextColor;
+  tagView.crossColor = _crossColor;
+  tagView.cornerRadius = _cornerRadius;
+  
   
   [tagView setTapBlock:^(NSString *tagText, NSInteger idx)
    {
@@ -160,6 +173,32 @@
    }];
   
   return tagView;
+}
+
+#pragma mark - Property setters
+
+- (void)setTagColor:(UIColor *)tagColor
+{
+  _tagColor = tagColor;
+  [self reloadTagsView];
+}
+
+- (void)setTagTextColor:(UIColor *)tagTextColor
+{
+  _tagTextColor = tagTextColor;
+  [self reloadTagsView];
+}
+
+- (void)setCrossColor:(UIColor *)crossColor
+{
+  _crossColor = crossColor;
+  [self reloadTagsView];
+}
+
+- (void)setCornerRadius:(CGFloat)cornerRadius
+{
+  _cornerRadius = cornerRadius;
+  [self reloadTagsView];
 }
 
 @end

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FG-vn-636">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-ga-XTD">
+                                        <rect key="frame" x="8" y="7" width="516" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3st-Fw-1df">
+                                        <rect key="frame" x="532" y="7" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="nE5-IT-1XU"/>
+                                        </constraints>
+                                        <state key="normal" title="Add">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lZt-PJ-fGy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.41960784309999999" blue="0.3294117647" alpha="0.25" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="ADb-ga-XTD" secondAttribute="centerY" id="Aj6-OS-Dmy"/>
+                                    <constraint firstAttribute="trailing" secondItem="3st-Fw-1df" secondAttribute="trailing" constant="8" id="FoR-7s-BAN"/>
+                                    <constraint firstItem="ADb-ga-XTD" firstAttribute="centerY" secondItem="3st-Fw-1df" secondAttribute="centerY" id="ehZ-lN-uNe"/>
+                                    <constraint firstItem="3st-Fw-1df" firstAttribute="leading" secondItem="ADb-ga-XTD" secondAttribute="trailing" constant="8" id="gwL-p1-h47"/>
+                                    <constraint firstAttribute="height" constant="44" id="lAe-WC-S65"/>
+                                    <constraint firstItem="ADb-ga-XTD" firstAttribute="leading" secondItem="0FG-vn-636" secondAttribute="leading" constant="8" id="vq1-e9-QGM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkI-0u-D9v">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWP-dz-mWG" customClass="ASJTags">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="AWP-dz-mWG" secondAttribute="trailing" id="8qm-Up-97C"/>
+                                    <constraint firstItem="AWP-dz-mWG" firstAttribute="top" secondItem="tkI-0u-D9v" secondAttribute="top" id="DYx-ee-m0K"/>
+                                    <constraint firstAttribute="bottom" secondItem="AWP-dz-mWG" secondAttribute="bottom" id="lCM-jH-zs5"/>
+                                    <constraint firstItem="AWP-dz-mWG" firstAttribute="leading" secondItem="tkI-0u-D9v" secondAttribute="leading" id="rG8-Qd-ssO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0FG-vn-636" secondAttribute="trailing" id="2Ec-Av-U21"/>
+                            <constraint firstItem="0FG-vn-636" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3IV-8D-amL"/>
+                            <constraint firstItem="tkI-0u-D9v" firstAttribute="top" secondItem="0FG-vn-636" secondAttribute="bottom" id="Dag-kR-0xK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tkI-0u-D9v" secondAttribute="bottom" id="Hp0-co-nmX"/>
+                            <constraint firstAttribute="trailing" secondItem="tkI-0u-D9v" secondAttribute="trailing" id="POR-IF-9dl"/>
+                            <constraint firstItem="tkI-0u-D9v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gI0-bi-oy5"/>
+                            <constraint firstItem="0FG-vn-636" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iRp-Uy-tnQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="ADb-ga-XTD" id="nM9-5d-bUG"/>
+                        <outlet property="tagsView" destination="AWP-dz-mWG" id="RWH-q1-GIw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="223" y="366"/>
+        </scene>
+    </scenes>
+</document>

@@ -6,15 +6,17 @@
 //  Copyright (c) 2016 sudeep. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@class TagView;
+@import UIKit;
 
 typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 
-@interface TagView : UIView
+@interface ASJTagView : UIView
 
 @property (copy, nonatomic) NSString *tagText;
+@property (strong, nonatomic) UIColor *tagTextColor;
+@property (strong, nonatomic) UIColor *crossColor;
+@property (assign, nonatomic) CGFloat cornerRadius;
+
 @property (copy) TagBlock tapBlock;
 @property (copy) TagBlock deleteBlock;
 

@@ -6,13 +6,19 @@
 //  Copyright (c) 2016 sudeep. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@class TagView;
+@class ASJTagView;
 
 typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 
 @interface ASJTags : UIScrollView
+
+@property (strong, nonatomic) UIColor *tagColor;
+@property (strong, nonatomic) UIColor *tagTextColor;
+@property (strong, nonatomic) UIColor *crossColor;
+@property (assign, nonatomic) CGFloat cornerRadius;
+@property (assign, nonatomic) CGFloat tagSpacing;
 
 @property (copy) TagBlock tapBlock;
 @property (copy) TagBlock deleteBlock;
@@ -26,7 +32,3 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 - (void)setDeleteBlock:(TagBlock)deleteBlock;
 
 @end
-
-#warning add horizontal and vertical support!
-#warning add support for adding custom view
-#warning add customisation options for tag view

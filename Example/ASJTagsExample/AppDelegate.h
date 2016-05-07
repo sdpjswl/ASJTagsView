@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  TagsExample
+//  ASJTagsExample
 //
-//  Created by sudeep on 1/30/16.
-//  Copyright (c) 2016 sudeep. All rights reserved.
+//  Created by sudeep on 07/05/16.
+//  Copyright © 2016 sudeep. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
