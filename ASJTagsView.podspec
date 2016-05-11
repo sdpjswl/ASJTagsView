@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = 'ASJTagsView'
-  s.version      = '0.1'
+  s.version      = '0.2'
   s.platform	   = :ios, '8.0'
   s.license      = { :type => 'MIT' }
   s.homepage     = 'https://github.com/sudeepjaiswal/ASJTagsView'
   s.authors      = { 'Sudeep Jaiswal' => 'sudeepjaiswal87@gmail.com' }
   s.summary      = 'Quickly create a view with tags with an option to delete'
-  s.source       = { :git => 'https://github.com/sudeepjaiswal/ASJTagsView.git', :tag => '0.1' }
+  s.source       = { :git => 'https://github.com/sudeepjaiswal/ASJTagsView.git', :tag => '0.2' }
   s.source_files = 'ASJTagsView/*.{h,m}'
   s.resources    = ['ASJTagsView/Resources.bundle', 'ASJTagsView/*.xib']
   s.requires_arc = true
