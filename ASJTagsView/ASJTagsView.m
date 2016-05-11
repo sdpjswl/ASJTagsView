@@ -1,28 +1,46 @@
+// ASJTagsView.m
 //
-//  ASJTags.m
-//  TagsExample
+// Copyright (c) 2016 Sudeep Jaiswal
 //
-//  Created by sudeep on 2/1/16.
-//  Copyright (c) 2016 sudeep. All rights reserved.
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
-
-#import "ASJTags.h"
-#import "ASJTagView.h"
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+#import "ASJTagsView.h"
+#import "ASJTag.h"
 
 #define kDefaultTagsColor [UIColor colorWithRed:60.0f/255.0 green:130.0f/255.0 blue:170.0f/255.0 alpha:1.0f]
 
-@interface ASJTags ()
+@interface ASJTagsView ()
 
-@property (weak, nonatomic) ASJTagView *tagView;
+@property (weak, nonatomic) ASJTag *tagView;
 @property (copy, nonatomic) NSArray *tags;
+@property (readonly, weak, nonatomic) NSNotificationCenter *notificationCenter;
 
 - (void)setup;
+- (void)setupDefaults;
+- (void)listenForOrientationChanges;
+- (void)orientationDidChange:(NSNotification *)note;
 - (void)empty;
 - (void)addTags;
+- (void)setupBlocksForTagView:(ASJTag *)tagView;
 
 @end
 
-@implementation ASJTags
+@implementation ASJTagsView
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -46,20 +64,68 @@
 
 - (void)setup
 {
+  [self setupDefaults];
+  [self listenForOrientationChanges];
+}
+
+- (void)setupDefaults
+{
   _tags = [[NSArray alloc] init];
   _tagColor = kDefaultTagsColor;
   _tagTextColor = [UIColor whiteColor];
-  _crossColor = [UIColor whiteColor];
+  _tagFont = [UIFont systemFontOfSize:15.0f];
   _cornerRadius = 4.0f;
   _tagSpacing = 8.0f;
+}
+
+#pragma mark - Orientation
+
+- (void)listenForOrientationChanges
+{
+  [self.notificationCenter addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)orientationDidChange:(NSNotification *)note
+{
+  [self reloadTagsView];
+}
+
+- (void)dealloc
+{
+  [self.notificationCenter removeObserver:self];
+}
+
+- (NSNotificationCenter *)notificationCenter
+{
+  return [NSNotificationCenter defaultCenter];
 }
 
 #pragma mark - Public
 
 - (void)addTag:(NSString *)tag
 {
+  if (!tag.length) {
+    return;
+  }
+  
   NSMutableArray *temp = _tags.mutableCopy;
   [temp addObject:tag];
+  _tags = [NSArray arrayWithArray:temp];
+  [self reloadTagsView];
+}
+
+- (void)addTags:(NSArray<NSString *> *)tags
+{
+  if (!tags.count) {
+    return;
+  }
+  
+  for (id object in tags) {
+    NSAssert([object isKindOfClass:[NSString class]], @"Tags must be of type NSString.");
+  }
+  
+  NSMutableArray *temp = _tags.mutableCopy;
+  [temp addObjectsFromArray:tags];
   _tags = [NSArray arrayWithArray:temp];
   [self reloadTagsView];
 }
@@ -80,6 +146,11 @@
   [self reloadTagsView];
 }
 
+- (void)deleteAllTags
+{
+  [self empty];
+}
+
 #pragma mark - Creation
 
 - (void)reloadTagsView
@@ -92,7 +163,7 @@
 {
   for (id view in self.subviews)
   {
-    if (![view isKindOfClass:[ASJTagView class]]) {
+    if (![view isKindOfClass:[ASJTag class]]) {
       continue;
     }
     [view removeFromSuperview];
@@ -108,7 +179,7 @@
   
   [_tags enumerateObjectsUsingBlock:^(NSString *tag, NSUInteger idx, BOOL *stop)
    {
-     ASJTagView *tagView = self.tagView;
+     ASJTag *tagView = self.tagView;
      tagView.tagText = tag;
      tagView.tag = idx;
      
@@ -148,16 +219,22 @@
    }];
 }
 
-- (ASJTagView *)tagView
+- (ASJTag *)tagView
 {
-  ASJTagView *tagView = (ASJTagView *)[[NSBundle mainBundle] loadNibNamed:@"ASJTagView" owner:self options:nil][0];
+  ASJTag *tagView = (ASJTag *)[[NSBundle mainBundle] loadNibNamed:@"ASJTag" owner:self options:nil][0];
   
   tagView.backgroundColor = _tagColor;
   tagView.tagTextColor = _tagTextColor;
-  tagView.crossColor = _crossColor;
+  tagView.crossImage = _crossImage;
+  tagView.tagFont = _tagFont;
   tagView.cornerRadius = _cornerRadius;
   
-  
+  [self setupBlocksForTagView:tagView];
+  return tagView;
+}
+
+- (void)setupBlocksForTagView:(ASJTag *)tagView
+{
   [tagView setTapBlock:^(NSString *tagText, NSInteger idx)
    {
      if (_tapBlock) {
@@ -171,8 +248,6 @@
        _deleteBlock(tagText, idx);
      }
    }];
-  
-  return tagView;
 }
 
 #pragma mark - Property setters
@@ -189,15 +264,27 @@
   [self reloadTagsView];
 }
 
-- (void)setCrossColor:(UIColor *)crossColor
+- (void)setCrossImage:(UIImage *)crossImage
 {
-  _crossColor = crossColor;
+  _crossImage = crossImage;
+  [self reloadTagsView];
+}
+
+- (void)setTagFont:(UIFont *)tagFont
+{
+  _tagFont = tagFont;
   [self reloadTagsView];
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius
 {
   _cornerRadius = cornerRadius;
+  [self reloadTagsView];
+}
+
+- (void)setTagSpacing:(CGFloat)tagSpacing
+{
+  _tagSpacing = tagSpacing;
   [self reloadTagsView];
 }
 

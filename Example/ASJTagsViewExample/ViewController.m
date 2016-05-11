@@ -1,26 +1,24 @@
 //
 //  ViewController.m
-//  ASJTagsExample
+//  ASJTagsViewExample
 //
-//  Created by sudeep on 07/05/16.
+//  Created by sudeep on 11/05/16.
 //  Copyright © 2016 sudeep. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "ASJTags.h"
+#import "ASJTagsView.h"
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet ASJTags *tagsView;
+@property (weak, nonatomic) IBOutlet ASJTagsView *tagsView;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
-@property (readonly, weak, nonatomic) NSNotificationCenter *notificationCenter;
 
 - (void)setup;
-- (void)listenForOrientationChanges;
-- (void)orientationDidChange:(NSNotification *)note;
 - (void)handleTagBlocks;
-- (IBAction)addTapped:(id)sender;
 - (void)showAlertMessage:(NSString *)message;
+- (IBAction)addTapped:(id)sender;
+- (IBAction)clearAllTapped:(id)sender;
 
 @end
 
@@ -43,31 +41,8 @@
 
 - (void)setup
 {
-  [self listenForOrientationChanges];
   [self handleTagBlocks];
   [_inputTextField becomeFirstResponder];
-}
-
-#pragma mark - Orientation
-
-- (void)listenForOrientationChanges
-{
-  [self.notificationCenter addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
-}
-
-- (void)orientationDidChange:(NSNotification *)note
-{
-  [_tagsView reloadTagsView];
-}
-
-- (void)dealloc
-{
-  [self.notificationCenter removeObserver:self];
-}
-
-- (NSNotificationCenter *)notificationCenter
-{
-  return [NSNotificationCenter defaultCenter];
 }
 
 #pragma mark - Tag blocks
@@ -83,6 +58,8 @@
   
   [_tagsView setDeleteBlock:^(NSString *tagText, NSInteger idx)
    {
+     NSString *message = [NSString stringWithFormat:@"You deleted: %@", tagText];
+     [weakSelf showAlertMessage:message];
      [weakSelf.tagsView deleteTagAtIndex:idx];
    }];
 }
@@ -97,17 +74,17 @@
   [self presentViewController:alert animated:YES completion:nil];
 }
 
-#pragma mark - IBAction
+#pragma mark - IBActions
 
 - (IBAction)addTapped:(id)sender
 {
-  NSString *tagText = _inputTextField.text;
-  if (!tagText.length) {
-    return;
-  }
-  
-  [_tagsView addTag:tagText];
+  [_tagsView addTag:_inputTextField.text];
   _inputTextField.text = nil;
+}
+
+- (IBAction)clearAllTapped:(id)sender
+{
+  [_tagsView deleteAllTags];
 }
 
 @end

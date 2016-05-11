@@ -1,8 +1,8 @@
 //
 //  main.m
-//  ASJTagsExample
+//  ASJTagsViewExample
 //
-//  Created by sudeep on 07/05/16.
+//  Created by sudeep on 11/05/16.
 //  Copyright © 2016 sudeep. All rights reserved.
 //
 
