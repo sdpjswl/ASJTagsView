@@ -41,6 +41,11 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 @property (nullable, strong, nonatomic) IBInspectable UIColor *tagTextColor;
 
 /**
+ *  Border color for individual tags.
+ */
+@property (nullable, strong, nonatomic) IBInspectable UIColor *borderColor;
+
+/**
  *  Set a custom image for the delete button.
  */
 @property (nullable, strong, nonatomic) IBInspectable UIImage *crossImage;
@@ -49,6 +54,11 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
  *  Font for the tags' text.
  */
 @property (nullable, assign, nonatomic) UIFont *tagFont;
+
+/**
+ *  Set the border width for individual tags.
+ */
+@property (assign, nonatomic) IBInspectable CGFloat borderWidth;
 
 /**
  *  Round the tags using this property.

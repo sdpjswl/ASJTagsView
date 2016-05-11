@@ -49,11 +49,6 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 @property (nullable, assign, nonatomic) UIFont *tagFont;
 
 /**
- *  Round the tags using this property.
- */
-@property (assign, nonatomic) CGFloat cornerRadius;
-
-/**
  *  A block to handle taps on the tags.
  */
 @property (nullable, copy) TagBlock tapBlock;

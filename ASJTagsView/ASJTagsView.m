@@ -181,6 +181,9 @@
    {
      ASJTag *tagView = self.tagView;
      tagView.tagText = tag;
+     tagView.layer.borderColor = _borderColor.CGColor;
+     tagView.layer.borderWidth = _borderWidth;
+     tagView.layer.cornerRadius = _cornerRadius;
      tagView.tag = idx;
      
      CGSize size = [tagView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize
@@ -227,7 +230,6 @@
   tagView.tagTextColor = _tagTextColor;
   tagView.crossImage = _crossImage;
   tagView.tagFont = _tagFont;
-  tagView.cornerRadius = _cornerRadius;
   
   [self setupBlocksForTagView:tagView];
   return tagView;
@@ -264,6 +266,12 @@
   [self reloadTagsView];
 }
 
+- (void)setBorderColor:(UIColor *)borderColor
+{
+  _borderColor = borderColor;
+  [self reloadTagsView];
+}
+
 - (void)setCrossImage:(UIImage *)crossImage
 {
   _crossImage = crossImage;
@@ -273,6 +281,12 @@
 - (void)setTagFont:(UIFont *)tagFont
 {
   _tagFont = tagFont;
+  [self reloadTagsView];
+}
+
+- (void)setBorderWidth:(CGFloat)borderWidth
+{
+  _borderWidth = borderWidth;
   [self reloadTagsView];
 }
 

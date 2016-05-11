@@ -105,10 +105,4 @@
   _tagButton.titleLabel.font = tagFont;
 }
 
-- (void)setCornerRadius:(CGFloat)cornerRadius
-{
-  _cornerRadius = cornerRadius;
-  self.layer.cornerRadius = cornerRadius;
-}
-
 @end
