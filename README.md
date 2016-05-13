@@ -1,14 +1,17 @@
 # ASJTagsView
+
 `ASJTagsView` is a UI component that lets you create a view full of tags with a delete icon. These are usually used to show search queries. They can be found in apps like Flipkart and Pinterest.
 
 # Installation
-Cocoapods is the recommended way to install this library. Add this command to your `Podfile`:
+
+CocoaPods is the recommended way to install this library. Add this command to your `Podfile`:
 
 ```
 pod 'ASJTagsView'
 ```
 
 # Usage
+
 Setting up is incredibly easy. Simply drop a `UIScrollView` on your storyboard or xib and change the class to `ASJTagsView`.
 
 ![alt tag](Images/CustomClass.png)
@@ -70,9 +73,11 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 ![alt tag](Images/Screenshot.png)
 
 # Credits
+
 - Cross icon taken from Google [Material Icons](https://design.google.com/icons/#ic_clear).
 
-###To-do
+# To-do
+
 - ~~Add horizontal and vertical support~~
 - ~~Add customisation options for tag view~~
 - Add support for adding custom view
@@ -80,4 +85,5 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 - Add option to show tags of random colors
 
 # License
+
 `ASJTagsView` is available under the MIT license. See the LICENSE file for more info.
