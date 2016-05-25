@@ -36,7 +36,7 @@ Adds a single tag to the tags view.
 ```objc
 - (void)appendTags:(NSArray<NSString *> *)tags;
 ```
-Append an array of `NSString`s to the tag view. They will be added AFTER the tags already visible.
+Append an array of `NSString`s to the tag view. They will be added **after** the tags already visible.
 
 ```objc
 - (void)replaceTags:(NSArray<NSString *> *)tags;
