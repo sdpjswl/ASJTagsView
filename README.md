@@ -18,7 +18,7 @@ Setting up is incredibly easy. Simply drop a `UIScrollView` on your storyboard o
 
 There are a number of `IBInspectable` properties that you can use to do some quick customizations.
 
-```
+```objc
 @property (nullable, strong, nonatomic) IBInspectable UIColor *tagColor;
 @property (nullable, strong, nonatomic) IBInspectable UIColor *tagTextColor;
 @property (nullable, strong, nonatomic) IBInspectable UIImage *crossImage;
@@ -28,44 +28,49 @@ There are a number of `IBInspectable` properties that you can use to do some qui
 
 To create one by code, you will need to import `ASJTagsView.h`. To work with the tags view, you have these options"
 
-```
+```objc
 - (void)addTag:(NSString *)tag;
 ```
 Adds a single tag to the tags view.
 
+```objc
+- (void)appendTags:(NSArray<NSString *> *)tags;
 ```
-- (void)addTags:(NSArray<NSString *> *)tags;
-```
-Add an array of `NSString`s to the tag view.
+Append an array of `NSString`s to the tag view. They will be added AFTER the tags already visible.
 
+```objc
+- (void)replaceTags:(NSArray<NSString *> *)tags;
 ```
+Replace all visible tags with new ones.
+
+```objc
 - (void)deleteTag:(NSString *)tag;
 ```
 Delete all similarly named tags according to the string provided.
 
-```
+```objc
 - (void)deleteTagAtIndex:(NSInteger)idx;
 ```
 Delete tag at the specified array index.
 
-```
+```objc
 - (void)deleteAllTags;
 ```
 Empty the tags view.
 
-```
+```objc
 - (void)reloadTagsView;
 ```
 Manual reload. Note that whenever you add or remove tags, the view will reload itself.
 
 There are two blocks that you can handle to get certain events:
 
-```
+```objc
 - (void)setTapBlock:(TagBlock _Nullable)tapBlock;
 ```
 Called when a tag is tapped. Inside the block, you will receive the tag string and the index at which it is present in the view.
 
-```
+```objc
 - (void)setDeleteBlock:(TagBlock _Nullable)deleteBlock;
 ```
 Called when a cross (delete button) is tapped. Inside the block, you will receive the tag string and the index at which it is present in the view.
