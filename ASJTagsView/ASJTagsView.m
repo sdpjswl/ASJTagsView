@@ -116,7 +116,7 @@
   [self reloadTagsView];
 }
 
-- (void)addTags:(NSArray<NSString *> *)tags
+- (void)appendTags:(NSArray<NSString *> *)tags
 {
   if (!tags.count) {
     return;
@@ -127,6 +127,23 @@
   }
   
   NSMutableArray *temp = _tags.mutableCopy;
+  [temp addObjectsFromArray:tags];
+  _tags = [NSArray arrayWithArray:temp];
+  [self reloadTagsView];
+}
+
+- (void)replaceTags:(NSArray<NSString *> *)tags
+{
+  if (!tags.count) {
+    return;
+  }
+  
+  for (id object in tags) {
+    NSAssert([object isKindOfClass:[NSString class]], @"Tags must be of type NSString.");
+  }
+  
+  NSMutableArray *temp = _tags.mutableCopy;
+  [temp removeAllObjects];
   [temp addObjectsFromArray:tags];
   _tags = [NSArray arrayWithArray:temp];
   [self reloadTagsView];

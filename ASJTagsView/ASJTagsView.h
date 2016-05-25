@@ -87,11 +87,18 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 - (void)addTag:(NSString *)tag;
 
 /**
- *  Adds multiple tags to the tags view at once.
+ *  Appends multiple tags AFTER any tags already present.
  *
  *  @param tags An array of NSStrings.
  */
-- (void)addTags:(NSArray<NSString *> *)tags;
+- (void)appendTags:(NSArray<NSString *> *)tags;
+
+/**
+ *  Replace ALL existing tags on the tags view.
+ *
+ *  @param tags An array of NSStrings.
+ */
+- (void)replaceTags:(NSArray<NSString *> *)tags;
 
 /**
  *  Delete all tags matching the given string.
