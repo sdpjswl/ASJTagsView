@@ -6,7 +6,7 @@
 
 CocoaPods is the recommended way to install this library. Add this command to your `Podfile`:
 
-```
+```ruby
 pod 'ASJTagsView'
 ```
 
@@ -31,36 +31,43 @@ To create one by code, you will need to import `ASJTagsView.h`. To work with the
 ```objc
 - (void)addTag:(NSString *)tag;
 ```
+
 Adds a single tag to the tags view.
 
 ```objc
 - (void)appendTags:(NSArray<NSString *> *)tags;
 ```
+
 Append an array of `NSString`s to the tag view. They will be added **after** the tags already visible.
 
 ```objc
 - (void)replaceTags:(NSArray<NSString *> *)tags;
 ```
+
 Replace all visible tags with new ones.
 
 ```objc
 - (void)deleteTag:(NSString *)tag;
 ```
+
 Delete all similarly named tags according to the string provided.
 
 ```objc
 - (void)deleteTagAtIndex:(NSInteger)idx;
 ```
+
 Delete tag at the specified array index.
 
 ```objc
 - (void)deleteAllTags;
 ```
+
 Empty the tags view.
 
 ```objc
 - (void)reloadTagsView;
 ```
+
 Manual reload. Note that whenever you add or remove tags, the view will reload itself.
 
 There are two blocks that you can handle to get certain events:
@@ -68,11 +75,13 @@ There are two blocks that you can handle to get certain events:
 ```objc
 - (void)setTapBlock:(TagBlock _Nullable)tapBlock;
 ```
+
 Called when a tag is tapped. Inside the block, you will receive the tag string and the index at which it is present in the view.
 
 ```objc
 - (void)setDeleteBlock:(TagBlock _Nullable)deleteBlock;
 ```
+
 Called when a cross (delete button) is tapped. Inside the block, you will receive the tag string and the index at which it is present in the view.
 
 ![alt tag](Images/Screenshot.png)
@@ -83,11 +92,11 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 
 # To-do
 
-- ~~Add horizontal and vertical support~~
-- ~~Add customisation options for tag view~~
-- Add support for adding custom view
-- Add option to disable cross
-- Add option to show tags of random colors
+- ~~Add horizontal and vertical support.~~
+- ~~Add customisation options for tag view.~~
+- Add support for adding custom view.
+- Add option to disable cross.
+- Add option to show tags of random colors.
 
 # License
 
