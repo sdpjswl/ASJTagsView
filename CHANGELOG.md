@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0](https://github.com/sudeepjaiswal/ASJTagsView/releases/tag/1.0)
+Released on Tuesday, 12 Jul, 2016.
+
+#### Added
+* Added 'tagColorTheme' property to set certain predefined colors on tags.
+* Added change log.
+
 ## [0.4](https://github.com/sudeepjaiswal/ASJTagsView/releases/tag/0.4)
 Released on Wednesday, 25 May, 2016.
 
