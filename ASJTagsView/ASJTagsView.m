@@ -24,8 +24,6 @@
 #import "ASJTagsView.h"
 #import "ASJTag.h"
 
-#define kDefaultTagsColor [UIColor colorWithRed:60.0f/255.0 green:130.0f/255.0 blue:170.0f/255.0 alpha:1.0f]
-
 @interface ASJTagsView ()
 
 @property (weak, nonatomic) ASJTag *tagView;
@@ -39,6 +37,7 @@
 - (void)empty;
 - (void)addTags;
 - (void)setupBlocksForTagView:(ASJTag *)tagView;
++ (UIColor *)colorWithR:(CGFloat)r G:(CGFloat)g B:(CGFloat)b;
 
 @end
 
@@ -73,7 +72,7 @@
 - (void)setupDefaults
 {
   _tags = [[NSArray alloc] init];
-  _tagColor = kDefaultTagsColor;
+  _tagColorTheme = TagColorThemeDefault;
   _tagTextColor = [UIColor whiteColor];
   _tagFont = [UIFont systemFontOfSize:15.0f];
   _cornerRadius = 4.0f;
@@ -245,6 +244,10 @@
 {
   ASJTag *tagView = (ASJTag *)[[NSBundle mainBundle] loadNibNamed:@"ASJTag" owner:self options:nil][0];
   
+  // use the default theme if tag color is not set
+  if (!_tagColor) {
+    self.tagColorTheme = TagColorThemeDefault;
+  }
   tagView.backgroundColor = _tagColor;
   tagView.tagTextColor = _tagTextColor;
   tagView.crossImage = _crossImage;
@@ -272,6 +275,46 @@
 }
 
 #pragma mark - Property setters
+
+- (void)setTagColorTheme:(TagColorTheme)tagColorTheme
+{
+  _tagColorTheme = tagColorTheme;
+  
+  switch (tagColorTheme)
+  {
+    case TagColorThemeDefault:
+      _tagColor = [ASJTagsView colorWithR:60 G:130 B:170];
+      break;
+      
+    case TagColorThemeStrawberry:
+      _tagColor = [ASJTagsView colorWithR:190 G:38 B:37];
+      break;
+      
+    case TagColorThemeChartreuse:
+      _tagColor = [ASJTagsView colorWithR:69 G:139 B:0];
+      break;
+      
+    case TagColorThemeIndigo:
+      _tagColor = [ASJTagsView colorWithR:13 G:79 B:139];
+      break;
+      
+    case TagColorThemePlum:
+      _tagColor = [ASJTagsView colorWithR:139 G:102 B:139];
+      break;
+      
+    case TagColorThemeRaspberry:
+      _tagColor = [ASJTagsView colorWithR:135 G:38 B:87];
+      break;
+      
+    case TagColorThemeCoolGray:
+      _tagColor = [ASJTagsView colorWithR:118 G:122 B:133];
+      break;
+      
+    default:
+      break;
+  }
+  [self reloadTagsView];
+}
 
 - (void)setTagColor:(UIColor *)tagColor
 {
@@ -319,6 +362,13 @@
 {
   _tagSpacing = tagSpacing;
   [self reloadTagsView];
+}
+
+#pragma mark - Helpers
+
++ (UIColor *)colorWithR:(CGFloat)r G:(CGFloat)g B:(CGFloat)b
+{
+  return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f];
 }
 
 @end

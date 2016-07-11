@@ -41,6 +41,7 @@
 
 - (void)setup
 {
+  _tagsView.tagColorTheme = TagColorThemeStrawberry;
   [self handleTagBlocks];
   [_inputTextField becomeFirstResponder];
 }

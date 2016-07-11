@@ -29,7 +29,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 
+/**
+ *  These are a few predefined color themes you can use instead of the 'tagColor' property. Most colors are taken from: https://github.com/bennyguitar/Colours/blob/master/Colours
+ */
+typedef NS_ENUM(NSInteger, TagColorTheme)
+{
+  TagColorThemeDefault,
+  TagColorThemeChartreuse,
+  TagColorThemeCoolGray,
+  TagColorThemeIndigo,
+  TagColorThemePlum,
+  TagColorThemeRaspberry,
+  TagColorThemeStrawberry
+};
+
 @interface ASJTagsView : UIScrollView
+
+/**
+ *  A few predefined color themes you can use apart from setting a color of your own. Note that setting the 'tagColor' property will override any theme you have set. 'tagColor' needs to be 'nil' in order for color themes to work.
+ */
+@property (assign, nonatomic) IBInspectable TagColorTheme tagColorTheme;
 
 /**
  *  Background color of tags.
