@@ -19,6 +19,7 @@ Setting up is incredibly easy. Simply drop a `UIScrollView` on your storyboard o
 There are a number of `IBInspectable` properties that you can use to do some quick customizations.
 
 ```objc
+@property (assign, nonatomic) IBInspectable TagColorTheme tagColorTheme;
 @property (nullable, strong, nonatomic) IBInspectable UIColor *tagColor;
 @property (nullable, strong, nonatomic) IBInspectable UIColor *tagTextColor;
 @property (nullable, strong, nonatomic) IBInspectable UIImage *crossImage;
@@ -89,6 +90,7 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 # Credits
 
 - Cross icon taken from Google [Material Icons](https://design.google.com/icons/#ic_clear).
+- Most tag color themes taken from [Benny Guitar's] (https://github.com/bennyguitar) [Colours](https://github.com/bennyguitar/Colours).
 
 # To-do
 
