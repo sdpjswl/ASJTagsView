@@ -276,46 +276,6 @@
 
 #pragma mark - Property setters
 
-- (void)setTagColorTheme:(TagColorTheme)tagColorTheme
-{
-  _tagColorTheme = tagColorTheme;
-  
-  switch (tagColorTheme)
-  {
-    case TagColorThemeDefault:
-      _tagColor = [ASJTagsView colorWithR:60 G:130 B:170];
-      break;
-      
-    case TagColorThemeStrawberry:
-      _tagColor = [ASJTagsView colorWithR:190 G:38 B:37];
-      break;
-      
-    case TagColorThemeChartreuse:
-      _tagColor = [ASJTagsView colorWithR:69 G:139 B:0];
-      break;
-      
-    case TagColorThemeIndigo:
-      _tagColor = [ASJTagsView colorWithR:13 G:79 B:139];
-      break;
-      
-    case TagColorThemePlum:
-      _tagColor = [ASJTagsView colorWithR:139 G:102 B:139];
-      break;
-      
-    case TagColorThemeRaspberry:
-      _tagColor = [ASJTagsView colorWithR:135 G:38 B:87];
-      break;
-      
-    case TagColorThemeCoolGray:
-      _tagColor = [ASJTagsView colorWithR:118 G:122 B:133];
-      break;
-      
-    default:
-      break;
-  }
-  [self reloadTagsView];
-}
-
 - (void)setTagColor:(UIColor *)tagColor
 {
   _tagColor = tagColor;
@@ -361,6 +321,46 @@
 - (void)setTagSpacing:(CGFloat)tagSpacing
 {
   _tagSpacing = tagSpacing;
+  [self reloadTagsView];
+}
+
+- (void)setTagColorTheme:(TagColorTheme)tagColorTheme
+{
+  _tagColorTheme = tagColorTheme;
+  
+  switch (tagColorTheme)
+  {
+    case TagColorThemeDefault:
+      _tagColor = [ASJTagsView colorWithR:60 G:130 B:170];
+      break;
+      
+    case TagColorThemeStrawberry:
+      _tagColor = [ASJTagsView colorWithR:190 G:38 B:37];
+      break;
+      
+    case TagColorThemeChartreuse:
+      _tagColor = [ASJTagsView colorWithR:69 G:139 B:0];
+      break;
+      
+    case TagColorThemeIndigo:
+      _tagColor = [ASJTagsView colorWithR:13 G:79 B:139];
+      break;
+      
+    case TagColorThemePlum:
+      _tagColor = [ASJTagsView colorWithR:139 G:102 B:139];
+      break;
+      
+    case TagColorThemeRaspberry:
+      _tagColor = [ASJTagsView colorWithR:135 G:38 B:87];
+      break;
+      
+    case TagColorThemeCoolGray:
+      _tagColor = [ASJTagsView colorWithR:118 G:122 B:133];
+      break;
+      
+    default:
+      break;
+  }
   [self reloadTagsView];
 }
 
