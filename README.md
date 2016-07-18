@@ -19,56 +19,53 @@ Setting up is incredibly easy. Simply drop a `UIScrollView` on your storyboard o
 There are a number of `IBInspectable` properties that you can use to do some quick customizations.
 
 ```objc
-@property (assign, nonatomic) IBInspectable TagColorTheme tagColorTheme;
 @property (nullable, strong, nonatomic) IBInspectable UIColor *tagColor;
 @property (nullable, strong, nonatomic) IBInspectable UIColor *tagTextColor;
 @property (nullable, strong, nonatomic) IBInspectable UIImage *crossImage;
 @property (assign, nonatomic) IBInspectable CGFloat cornerRadius;
 @property (assign, nonatomic) IBInspectable CGFloat tagSpacing;
+@property (assign, nonatomic) IBInspectable TagColorTheme tagColorTheme;
 ```
+
+The 'tagColorTheme' property lets you quickly skin your tags by choosing from a set of predefined themes. All colors except the default have been taken from [Ben Gordon's] (https://github.com/bennyguitar) [Colours](https://github.com/bennyguitar/Colours).
+
+![alt tag](Images/ColorThemes.png)
 
 To create one by code, you will need to import `ASJTagsView.h`. To work with the tags view, you have these options"
 
 ```objc
 - (void)addTag:(NSString *)tag;
 ```
-
 Adds a single tag to the tags view.
 
 ```objc
 - (void)appendTags:(NSArray<NSString *> *)tags;
 ```
-
 Append an array of `NSString`s to the tag view. They will be added **after** the tags already visible.
 
 ```objc
 - (void)replaceTags:(NSArray<NSString *> *)tags;
 ```
-
 Replace all visible tags with new ones.
 
 ```objc
 - (void)deleteTag:(NSString *)tag;
 ```
-
 Delete all similarly named tags according to the string provided.
 
 ```objc
 - (void)deleteTagAtIndex:(NSInteger)idx;
 ```
-
 Delete tag at the specified array index.
 
 ```objc
 - (void)deleteAllTags;
 ```
-
 Empty the tags view.
 
 ```objc
 - (void)reloadTagsView;
 ```
-
 Manual reload. Note that whenever you add or remove tags, the view will reload itself.
 
 There are two blocks that you can handle to get certain events:
@@ -76,13 +73,11 @@ There are two blocks that you can handle to get certain events:
 ```objc
 - (void)setTapBlock:(TagBlock _Nullable)tapBlock;
 ```
-
 Called when a tag is tapped. Inside the block, you will receive the tag string and the index at which it is present in the view.
 
 ```objc
 - (void)setDeleteBlock:(TagBlock _Nullable)deleteBlock;
 ```
-
 Called when a cross (delete button) is tapped. Inside the block, you will receive the tag string and the index at which it is present in the view.
 
 ![alt tag](Images/Screenshot.png)
@@ -90,7 +85,7 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 # Credits
 
 - Cross icon taken from Google [Material Icons](https://design.google.com/icons/#ic_clear).
-- Most tag color themes taken from [Benny Guitar's] (https://github.com/bennyguitar) [Colours](https://github.com/bennyguitar/Colours).
+- All tag color themes except the default taken from [Ben Gordon's] (https://github.com/bennyguitar) [Colours](https://github.com/bennyguitar/Colours).
 
 # To-do
 
@@ -99,6 +94,7 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 - Add support for adding custom view.
 - Add option to disable cross.
 - Add option to show tags of random colors.
+- User collection view instead of stock scroll view.
 
 # License
 
