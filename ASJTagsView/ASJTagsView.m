@@ -24,10 +24,72 @@
 #import "ASJTagsView.h"
 #import "ASJTag.h"
 
+#pragma mark - UIColor
+
+@interface UIColor (Tags)
+
++ (UIColor *)asj_defaultColor;
++ (UIColor *)asj_chartreuseColor;
++ (UIColor *)asj_coolGrayColor;
++ (UIColor *)asj_indigoColor;
++ (UIColor *)asj_plumColor;
++ (UIColor *)asj_raspberryColor;
++ (UIColor *)asj_strawberryColor;
++ (UIColor *)colorWithR:(CGFloat)r G:(CGFloat)g B:(CGFloat)b;
+
+@end
+
+@implementation UIColor (Tags)
+
++ (UIColor *)asj_defaultColor
+{
+  return [UIColor colorWithR:60 G:130 B:170];
+}
+
++ (UIColor *)asj_chartreuseColor
+{
+  return [UIColor colorWithR:69 G:139 B:0];
+}
+
++ (UIColor *)asj_coolGrayColor
+{
+  return [UIColor colorWithR:118 G:122 B:133];
+}
+
++ (UIColor *)asj_indigoColor
+{
+  return [UIColor colorWithR:13 G:79 B:139];
+}
+
++ (UIColor *)asj_plumColor
+{
+  return [UIColor colorWithR:139 G:102 B:139];
+}
+
++ (UIColor *)asj_raspberryColor
+{
+  return [UIColor colorWithR:135 G:38 B:87];
+}
+
++ (UIColor *)asj_strawberryColor
+{
+  return [UIColor colorWithR:190 G:38 B:37];
+}
+
++ (UIColor *)colorWithR:(CGFloat)r G:(CGFloat)g B:(CGFloat)b
+{
+  return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f];
+}
+
+@end
+
+#pragma mark - ASJTagsView
+
 @interface ASJTagsView ()
 
 @property (weak, nonatomic) ASJTag *tagView;
 @property (copy, nonatomic) NSArray *tags;
+@property (readonly, copy, nonatomic) NSArray *colors;
 @property (readonly, weak, nonatomic) NSNotificationCenter *notificationCenter;
 
 - (void)setup;
@@ -37,7 +99,6 @@
 - (void)empty;
 - (void)addTags;
 - (void)setupBlocksForTagView:(ASJTag *)tagView;
-+ (UIColor *)colorWithR:(CGFloat)r G:(CGFloat)g B:(CGFloat)b;
 
 @end
 
@@ -248,7 +309,16 @@
   if (!_tagColor) {
     self.tagColorTheme = TagColorThemeDefault;
   }
-  tagView.backgroundColor = _tagColor;
+  
+  if (_useRandomColors == NO) {
+    tagView.backgroundColor = _tagColor;
+  }
+  else
+  {
+    NSInteger randomIdx = arc4random() % self.colors.count;
+    tagView.backgroundColor = self.colors[randomIdx];
+  }
+  
   tagView.tagTextColor = _tagTextColor;
   tagView.crossImage = _crossImage;
   tagView.tagFont = _tagFont;
@@ -331,31 +401,31 @@
   switch (tagColorTheme)
   {
     case TagColorThemeDefault:
-      _tagColor = [ASJTagsView colorWithR:60 G:130 B:170];
-      break;
-      
-    case TagColorThemeStrawberry:
-      _tagColor = [ASJTagsView colorWithR:190 G:38 B:37];
+      _tagColor = [UIColor asj_defaultColor];
       break;
       
     case TagColorThemeChartreuse:
-      _tagColor = [ASJTagsView colorWithR:69 G:139 B:0];
-      break;
-      
-    case TagColorThemeIndigo:
-      _tagColor = [ASJTagsView colorWithR:13 G:79 B:139];
-      break;
-      
-    case TagColorThemePlum:
-      _tagColor = [ASJTagsView colorWithR:139 G:102 B:139];
-      break;
-      
-    case TagColorThemeRaspberry:
-      _tagColor = [ASJTagsView colorWithR:135 G:38 B:87];
+      _tagColor = [UIColor asj_chartreuseColor];
       break;
       
     case TagColorThemeCoolGray:
-      _tagColor = [ASJTagsView colorWithR:118 G:122 B:133];
+      _tagColor = [UIColor asj_coolGrayColor];
+      break;
+      
+    case TagColorThemeIndigo:
+      _tagColor = [UIColor asj_indigoColor];
+      break;
+      
+    case TagColorThemePlum:
+      _tagColor = [UIColor asj_plumColor];
+      break;
+      
+    case TagColorThemeRaspberry:
+      _tagColor = [UIColor asj_raspberryColor];
+      break;
+      
+    case TagColorThemeStrawberry:
+      _tagColor = [UIColor asj_strawberryColor];
       break;
       
     default:
@@ -364,11 +434,17 @@
   [self reloadTagsView];
 }
 
-#pragma mark - Helpers
+#pragma mark - Property getter
 
-+ (UIColor *)colorWithR:(CGFloat)r G:(CGFloat)g B:(CGFloat)b
+- (NSArray *)colors
 {
-  return [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f];
+ return @[[UIColor asj_defaultColor],
+          [UIColor asj_chartreuseColor],
+          [UIColor asj_coolGrayColor],
+          [UIColor asj_indigoColor],
+          [UIColor asj_plumColor],
+          [UIColor asj_raspberryColor],
+          [UIColor asj_strawberryColor]];
 }
 
 @end

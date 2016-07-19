@@ -85,6 +85,8 @@ typedef NS_ENUM(NSInteger, TagColorTheme)
  */
 @property (assign, nonatomic) IBInspectable CGFloat tagSpacing;
 
+@property (assign, nonatomic) IBInspectable BOOL useRandomColors;
+
 /**
  *  A few predefined color themes you can use apart from setting a color of your own. Note that setting the 'tagColor' property will override any theme you have set. 'tagColor' needs to be 'nil' in order for color themes to work.
  */

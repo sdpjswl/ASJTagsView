@@ -55,7 +55,7 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 @property (nullable, copy) TagBlock tapBlock;
 
 /**
- *  A block that executes when the "cross" is tapped to delete a tag.
+ *  A block that executes when the 'cross' is tapped to delete a tag.
  */
 @property (nullable, copy) TagBlock deleteBlock;
 
