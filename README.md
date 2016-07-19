@@ -31,7 +31,7 @@ The 'tagColorTheme' property lets you quickly skin your tags by choosing from a 
 
 ![alt tag](Images/ColorThemes.png)
 
-To create one by code, you will need to import `ASJTagsView.h`. To work with the tags view, you have these options"
+To create one by code, you will need to import `ASJTagsView.h`. To work with the tags view, you have these options:
 
 ```objc
 - (void)addTag:(NSString *)tag;
@@ -94,7 +94,7 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 - Add support for adding custom view.
 - Add option to disable cross.
 - Add option to show tags of random colors.
-- User collection view instead of stock scroll view.
+- Use `UICollectionView` instead of stock `UIScrollView`.
 
 # License
 
