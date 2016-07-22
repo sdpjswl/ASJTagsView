@@ -14,6 +14,7 @@
 		6BE0CE721CE3123A007BB6A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE0CE701CE3123A007BB6A6 /* Main.storyboard */; };
 		6BE0CE741CE3123A007BB6A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE0CE731CE3123A007BB6A6 /* Assets.xcassets */; };
 		6BE0CE771CE3123A007BB6A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE0CE751CE3123A007BB6A6 /* LaunchScreen.storyboard */; };
+		6BFF40621D41D350008EF94E /* TestLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF40611D41D350008EF94E /* TestLayout.m */; };
 		C019C78F1D41B0C800C7F9FD /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = C019C78E1D41B0C800C7F9FD /* TestView.m */; };
 		C019C7921D41B20C00C7F9FD /* TestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C019C7911D41B20C00C7F9FD /* TestCell.m */; };
 		C019C7941D41B25600C7F9FD /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C019C7931D41B25600C7F9FD /* TestCell.xib */; };
@@ -34,6 +35,8 @@
 		6BE0CE731CE3123A007BB6A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BE0CE761CE3123A007BB6A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BE0CE781CE3123A007BB6A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BFF40601D41D350008EF94E /* TestLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLayout.h; sourceTree = "<group>"; };
+		6BFF40611D41D350008EF94E /* TestLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLayout.m; sourceTree = "<group>"; };
 		C019C78D1D41B0C800C7F9FD /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		C019C78E1D41B0C800C7F9FD /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		C019C7901D41B20C00C7F9FD /* TestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCell.h; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				C019C7901D41B20C00C7F9FD /* TestCell.h */,
 				C019C7911D41B20C00C7F9FD /* TestCell.m */,
 				C019C7931D41B25600C7F9FD /* TestCell.xib */,
+				6BFF40601D41D350008EF94E /* TestLayout.h */,
+				6BFF40611D41D350008EF94E /* TestLayout.m */,
 				6BE0CE701CE3123A007BB6A6 /* Main.storyboard */,
 				6BE0CE731CE3123A007BB6A6 /* Assets.xcassets */,
 				6BE0CE751CE3123A007BB6A6 /* LaunchScreen.storyboard */,
@@ -195,6 +200,7 @@
 				C019C79C1D41B6DE00C7F9FD /* ASJTagsView.m in Sources */,
 				6BE0CE6C1CE3123A007BB6A6 /* AppDelegate.m in Sources */,
 				C019C78F1D41B0C800C7F9FD /* TestView.m in Sources */,
+				6BFF40621D41D350008EF94E /* TestLayout.m in Sources */,
 				6BE0CE691CE3123A007BB6A6 /* main.m in Sources */,
 				C019C79A1D41B6DE00C7F9FD /* ASJTag.m in Sources */,
 			);

@@ -10,7 +10,7 @@
 //#import "ASJTagsView.h"
 #import "TestView.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
 //@property (weak, nonatomic) IBOutlet ASJTagsView *tagsView;
 @property (weak, nonatomic) IBOutlet TestView *testView;
@@ -81,6 +81,13 @@
 - (IBAction)clearAllTapped:(id)sender
 {
   [_testView deleteAllTags];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+  return [textField resignFirstResponder];
 }
 
 @end

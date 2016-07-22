@@ -8,6 +8,7 @@
 
 #import "TestView.h"
 #import "TestCell.h"
+#import "TestLayout.h"
 
 #pragma mark - UIColor
 
@@ -124,14 +125,13 @@
   _tagTextColor = [UIColor whiteColor];
   _tagFont = [UIFont systemFontOfSize:15.0f];
   _cornerRadius = 4.0f;
-  _tagSpacing = 8.0f;
+  _tagSpacing = 10.0f;
 }
 
 - (void)setupLayout
 {
-  UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-  layout.sectionInset = UIEdgeInsetsMake(_tagSpacing, _tagSpacing, _tagSpacing, _tagSpacing);
-  layout.minimumInteritemSpacing = _tagSpacing;
+  TestLayout *layout = [[TestLayout alloc] init];
+  layout.itemSpacing = _tagSpacing;
   self.collectionViewLayout = layout;
 }
 
@@ -140,6 +140,8 @@
   UINib *nib = [UINib nibWithNibName:self.cellIdentifier bundle:nil];
   [self registerNib:nib forCellWithReuseIdentifier:self.cellIdentifier];
   
+  self.bounces = YES;
+  self.alwaysBounceVertical = YES;
   self.dataSource = self;
   self.delegate = self;
 }
@@ -283,17 +285,12 @@
      }
    }];
   
-  [self.collectionViewLayout invalidateLayout];
   return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-  TestCell *cell = (TestCell *)[collectionView cellForItemAtIndexPath:indexPath];
-  if (!cell) {
-    return CGSizeZero;
-  }
-  return [cell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+  [collectionView.collectionViewLayout invalidateLayout];
 }
 
 #pragma mark - Creation
