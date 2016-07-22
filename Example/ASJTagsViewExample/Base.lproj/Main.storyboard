@@ -71,19 +71,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZQ-Ln-Tle">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqq-EK-fh5" customClass="ASJTagsView">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e63-V3-vge" customClass="TestView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useRandomColors" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </scrollView>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="edg-6B-YfN">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Wqq-EK-fh5" firstAttribute="leading" secondItem="OZQ-Ln-Tle" secondAttribute="leading" id="3eD-tS-q1F"/>
-                                    <constraint firstItem="Wqq-EK-fh5" firstAttribute="top" secondItem="OZQ-Ln-Tle" secondAttribute="top" id="HRU-bo-2Ag"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wqq-EK-fh5" secondAttribute="bottom" id="Rmg-ya-JLb"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wqq-EK-fh5" secondAttribute="trailing" id="wie-Ki-vLJ"/>
+                                    <constraint firstItem="e63-V3-vge" firstAttribute="leading" secondItem="OZQ-Ln-Tle" secondAttribute="leading" id="6ia-1N-gLL"/>
+                                    <constraint firstAttribute="bottom" secondItem="e63-V3-vge" secondAttribute="bottom" id="bBj-UM-Rgn"/>
+                                    <constraint firstItem="e63-V3-vge" firstAttribute="top" secondItem="OZQ-Ln-Tle" secondAttribute="top" id="hlQ-23-xhx"/>
+                                    <constraint firstAttribute="trailing" secondItem="e63-V3-vge" secondAttribute="trailing" id="xdO-eg-MtZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -100,12 +104,12 @@
                     </view>
                     <connections>
                         <outlet property="inputTextField" destination="306-Ad-uea" id="bdR-R3-koQ"/>
-                        <outlet property="tagsView" destination="Wqq-EK-fh5" id="j24-5o-9VY"/>
+                        <outlet property="testView" destination="e63-V3-vge" id="qMm-zg-8oX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkD-Kz-aR1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315" y="365"/>
+            <point key="canvasLocation" x="328" y="415"/>
         </scene>
     </scenes>
 </document>

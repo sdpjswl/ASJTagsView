@@ -7,11 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "ASJTagsView.h"
+//#import "ASJTagsView.h"
+#import "TestView.h"
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet ASJTagsView *tagsView;
+//@property (weak, nonatomic) IBOutlet ASJTagsView *tagsView;
+@property (weak, nonatomic) IBOutlet TestView *testView;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 
 - (void)setup;
@@ -34,7 +36,7 @@
 
 - (void)setup
 {
-  _tagsView.tagColorTheme = TagColorThemeStrawberry;
+  _testView.tagColorTheme = TagColorThemeStrawberry;
   [self handleTagBlocks];
   [_inputTextField becomeFirstResponder];
 }
@@ -44,17 +46,17 @@
 - (void)handleTagBlocks
 {
   __weak typeof(self) weakSelf = self;
-  [_tagsView setTapBlock:^(NSString *tagText, NSInteger idx)
+  [_testView setTapBlock:^(NSString *tagText, NSInteger idx)
    {
      NSString *message = [NSString stringWithFormat:@"You tapped: %@", tagText];
      [weakSelf showAlertMessage:message];
    }];
   
-  [_tagsView setDeleteBlock:^(NSString *tagText, NSInteger idx)
+  [_testView setDeleteBlock:^(NSString *tagText, NSInteger idx)
    {
      NSString *message = [NSString stringWithFormat:@"You deleted: %@", tagText];
      [weakSelf showAlertMessage:message];
-     [weakSelf.tagsView deleteTagAtIndex:idx];
+     [weakSelf.testView deleteTagAtIndex:idx];
    }];
 }
 
@@ -72,13 +74,13 @@
 
 - (IBAction)addTapped:(id)sender
 {
-  [_tagsView addTag:_inputTextField.text];
+  [_testView addTag:_inputTextField.text];
   _inputTextField.text = nil;
 }
 
 - (IBAction)clearAllTapped:(id)sender
 {
-  [_tagsView deleteAllTags];
+  [_testView deleteAllTags];
 }
 
 @end
