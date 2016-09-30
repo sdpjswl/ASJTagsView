@@ -89,12 +89,13 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 
 # To-do
 
-- ~~Add horizontal and vertical support.~~
-- ~~Add customisation options for tag view.~~
-- Add support for adding custom view.
-- Add option to disable cross.
-- Add option to show tags of random colors.
-- Use `UICollectionView` instead of stock `UIScrollView`.
+- ~~Add landscape support~~
+- ~~Add customisation options for tag view~~
+- Add support for adding custom view
+- Add option to disable cross
+- Add option to show tags of random colors
+- Use `UICollectionView` instead of stock `UIScrollView`
+- Add option to make tags scroll horizontally
 
 # License
 
