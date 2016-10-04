@@ -71,27 +71,9 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZQ-Ln-Tle">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZQ-Ln-Tle" customClass="ASJTagsView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e63-V3-vge" customClass="TestView">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="edg-6B-YfN">
-                                            <size key="itemSize" width="50" height="50"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="e63-V3-vge" firstAttribute="leading" secondItem="OZQ-Ln-Tle" secondAttribute="leading" id="6ia-1N-gLL"/>
-                                    <constraint firstAttribute="bottom" secondItem="e63-V3-vge" secondAttribute="bottom" id="bBj-UM-Rgn"/>
-                                    <constraint firstItem="e63-V3-vge" firstAttribute="top" secondItem="OZQ-Ln-Tle" secondAttribute="top" id="hlQ-23-xhx"/>
-                                    <constraint firstAttribute="trailing" secondItem="e63-V3-vge" secondAttribute="trailing" id="xdO-eg-MtZ"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -107,12 +89,12 @@
                     </view>
                     <connections>
                         <outlet property="inputTextField" destination="306-Ad-uea" id="bdR-R3-koQ"/>
-                        <outlet property="testView" destination="e63-V3-vge" id="qMm-zg-8oX"/>
+                        <outlet property="tagsView" destination="OZQ-Ln-Tle" id="kjE-QL-gNg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkD-Kz-aR1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="328" y="415"/>
+            <point key="canvasLocation" x="317" y="435"/>
         </scene>
     </scenes>
 </document>
