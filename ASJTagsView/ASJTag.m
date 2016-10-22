@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *tagButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (readonly, nonatomic) UIImage *defaultCrossImage;
+@property (readonly, weak, nonatomic) NSBundle *tagsBundle;
 
 - (IBAction)tagTapped:(UIButton *)sender;
 - (IBAction)deleteTapped:(UIButton *)sender;
@@ -43,9 +44,14 @@
 
 - (UIImage *)defaultCrossImage
 {
-  NSString *resourcesBundlePath = [[NSBundle mainBundle] pathForResource:@"Resources" ofType:@"bundle"];
+  NSString *resourcesBundlePath = [self.tagsBundle pathForResource:@"Resources" ofType:@"bundle"];
   NSBundle *resourcesBundle = [NSBundle bundleWithPath:resourcesBundlePath];
   return [UIImage imageNamed:@"cross" inBundle:resourcesBundle compatibleWithTraitCollection:nil];
+}
+
+- (NSBundle *)tagsBundle
+{
+  return [NSBundle bundleForClass:[self class]];
 }
 
 #pragma mark - IBActions

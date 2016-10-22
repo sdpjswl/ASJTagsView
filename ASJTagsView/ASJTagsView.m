@@ -90,6 +90,7 @@
 @property (weak, nonatomic) ASJTag *tagView;
 @property (copy, nonatomic) NSArray *tags;
 @property (readonly, copy, nonatomic) NSArray *colors;
+@property (readonly, weak, nonatomic) NSBundle *tagsBundle;
 @property (readonly, weak, nonatomic) NSNotificationCenter *notificationCenter;
 
 - (void)setup;
@@ -303,7 +304,8 @@
 
 - (ASJTag *)tagView
 {
-  ASJTag *tagView = (ASJTag *)[[NSBundle mainBundle] loadNibNamed:@"ASJTag" owner:self options:nil][0];
+  NSString *nibName = NSStringFromClass([ASJTag class]);
+  ASJTag *tagView = (ASJTag *)[self.tagsBundle loadNibNamed:nibName owner:self options:nil][0];
   
   // use the default theme if tag color is not set
   if (!_tagColor) {
@@ -325,6 +327,11 @@
   
   [self setupBlocksForTagView:tagView];
   return tagView;
+}
+
+- (NSBundle *)tagsBundle
+{
+  return [NSBundle bundleForClass:[self class]];
 }
 
 - (void)setupBlocksForTagView:(ASJTag *)tagView
