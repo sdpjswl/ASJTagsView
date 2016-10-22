@@ -312,15 +312,7 @@
     self.tagColorTheme = TagColorThemeDefault;
   }
   
-  if (_useRandomColors == NO) {
-    tagView.backgroundColor = _tagColor;
-  }
-  else
-  {
-    NSInteger randomIdx = arc4random() % self.colors.count;
-    tagView.backgroundColor = self.colors[randomIdx];
-  }
-  
+  tagView.backgroundColor = _tagColor;
   tagView.tagTextColor = _tagTextColor;
   tagView.crossImage = _crossImage;
   tagView.tagFont = _tagFont;
