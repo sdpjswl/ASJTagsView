@@ -183,7 +183,7 @@
     return;
   }
   
-  for (id object in tags) {
+  for (__attribute__((unused)) id object in tags) {
     NSAssert([object isKindOfClass:[NSString class]], @"Tags must be of type NSString.");
   }
   
@@ -199,7 +199,7 @@
     return;
   }
   
-  for (id object in tags) {
+  for (__attribute__((unused)) id object in tags) {
     NSAssert([object isKindOfClass:[NSString class]], @"Tags must be of type NSString.");
   }
   
