@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.1](https://github.com/sudeepjaiswal/ASJTagsView/releases/tag/1.1)
+Released on Saturday, 22 Oct, 2016.
+
+#### Fixed
+* Fixes Issues [#1](https://github.com/sudeepjaiswal/ASJTagsView/issues/1) (partly) and [#3](https://github.com/sudeepjaiswal/ASJTagsView/issues/3), invalid `NSBundle` while using CocoaPods.
+
 ## [1.0](https://github.com/sudeepjaiswal/ASJTagsView/releases/tag/1.0)
 Released on Tuesday, 12 Jul, 2016.
 
