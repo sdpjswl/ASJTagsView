@@ -229,6 +229,7 @@
 - (void)deleteAllTags
 {
   [self empty];
+  self.tags = [NSArray array];
 }
 
 #pragma mark - Creation
