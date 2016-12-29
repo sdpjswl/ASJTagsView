@@ -108,8 +108,6 @@
   if (!tagFont) {
     return;
   }
-  _tagFont = tagFont;
-  _tagButton.titleLabel.font = tagFont;
 }
 
 @end
