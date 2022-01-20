@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.2](https://github.com/sdpjswl/ASJTagsView/releases/tag/1.2)
+Released on Thursday, 20 Jan, 2022.
+
+#### Added
+* Bug and crash fixes.
+* Added new property `showDeleteButton`.
+* Updated podspec.
+
 ## [1.1](https://github.com/sudeepjaiswal/ASJTagsView/releases/tag/1.1)
 Released on Saturday, 22 Oct, 2016.
 
@@ -10,7 +18,7 @@ Released on Saturday, 22 Oct, 2016.
 Released on Tuesday, 12 Jul, 2016.
 
 #### Added
-* Added 'tagColorTheme' property to set certain predefined colors on tags.
+* Added `tagColorTheme` property to set certain predefined colors on tags.
 * Added change log.
 
 ## [0.4](https://github.com/sudeepjaiswal/ASJTagsView/releases/tag/0.4)
