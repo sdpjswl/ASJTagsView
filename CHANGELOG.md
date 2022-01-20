@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.3](https://github.com/sdpjswl/ASJTagsView/releases/tag/1.3)
+Released on Friday, 21 Jan, 2022.
+
+#### Added
+* Fixed pod issue, xib not loading.
+
 ## [1.2](https://github.com/sdpjswl/ASJTagsView/releases/tag/1.2)
 Released on Thursday, 20 Jan, 2022.
 
