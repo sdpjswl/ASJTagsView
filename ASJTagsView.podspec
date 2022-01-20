@@ -10,7 +10,7 @@
   "source": {
     "git": "https://github.com/sdpjswl/ASJTagsView.git",
     "tag": "1.2"
-  }.
+  },
   "platforms": {
     "ios": "9.0"
   },
