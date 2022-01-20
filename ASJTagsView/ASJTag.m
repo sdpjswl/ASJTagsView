@@ -46,7 +46,13 @@
 - (UIImage *)defaultCrossImage
 {
   NSString *resourcesBundlePath = [self.tagsBundle pathForResource:@"Resources" ofType:@"bundle"];
-  NSBundle *resourcesBundle = [NSBundle bundleWithPath:resourcesBundlePath];
+  NSBundle *resourcesBundle = nil;
+  if (resourcesBundlePath != nil) {
+    resourcesBundle = [NSBundle bundleWithPath:resourcesBundlePath];
+  }
+  else {
+    resourcesBundle = self.tagsBundle;
+  }
   return [UIImage imageNamed:@"cross" inBundle:resourcesBundle compatibleWithTraitCollection:nil];
 }
 
