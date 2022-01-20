@@ -105,4 +105,11 @@
   [_deleteButton setImage:crossImage forState:UIControlStateNormal];
 }
 
+- (void)setShowDeleteButton:(BOOL)showDeleteButton
+{
+  if (showDeleteButton == NO) {
+    [_deleteButton removeFromSuperview];
+  }
+}
+
 @end

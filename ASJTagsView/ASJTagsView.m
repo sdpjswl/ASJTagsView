@@ -139,6 +139,7 @@
   _tagFont = [UIFont systemFontOfSize:15.0f];
   _cornerRadius = 4.0f;
   _tagSpacing = 8.0f;
+  _showDeleteButton = YES;
 }
 
 #pragma mark - Orientation
@@ -317,6 +318,7 @@
   tagView.tagTextColor = _tagTextColor;
   tagView.crossImage = _crossImage;
   tagView.tagFont = _tagFont;
+  tagView.showDeleteButton = _showDeleteButton;
   
   [self setupBlocksForTagView:tagView];
   return tagView;

@@ -91,6 +91,11 @@ typedef NS_ENUM(NSInteger, TagColorTheme)
 @property (assign, nonatomic) IBInspectable TagColorTheme tagColorTheme;
 
 /**
+ *  Show or hide the delete (cross) button on the tags. Default is YES.
+ */
+@property (assign, nonatomic) IBInspectable BOOL showDeleteButton;
+
+/**
  *  A block to handle taps on the tags.
  */
 @property (nullable, copy) TagBlock tapBlock;

@@ -35,6 +35,7 @@
 - (void)setup
 {
   _tagsView.tagColorTheme = TagColorThemeStrawberry;
+  _tagsView.showDeleteButton = NO;
   [self handleTagBlocks];
   [_inputTextField becomeFirstResponder];
 }

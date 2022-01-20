@@ -50,6 +50,11 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
 @property (nullable, assign, nonatomic) UIFont *tagFont;
 
 /**
+ *  Show or hide the delete (cross) button on a tag. Default is YES.
+ */
+@property (assign, nonatomic) BOOL showDeleteButton;
+
+/**
  *  A block to handle taps on the tags.
  */
 @property (nullable, copy) TagBlock tapBlock;

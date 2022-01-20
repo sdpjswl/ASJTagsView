@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -27,11 +28,11 @@
                         <action selector="deleteTapped:" destination="GU3-78-Bdh" eventType="touchUpInside" id="aAk-tq-61g"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-QH-zbm">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-QH-zbm">
                     <rect key="frame" x="8" y="0.0" width="52" height="45"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="Tag">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="nil" keyPath="titleLabel.text"/>
@@ -41,13 +42,14 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="cfm-QH-zbm" firstAttribute="leading" secondItem="GU3-78-Bdh" secondAttribute="leading" constant="8" id="Ccb-hY-eqd"/>
                 <constraint firstAttribute="bottom" secondItem="cfm-QH-zbm" secondAttribute="bottom" id="aXf-fT-9km"/>
                 <constraint firstAttribute="trailing" secondItem="pAg-JO-aHz" secondAttribute="trailing" id="ehn-lo-bXF"/>
                 <constraint firstItem="cfm-QH-zbm" firstAttribute="top" secondItem="GU3-78-Bdh" secondAttribute="top" id="hZH-ES-khF"/>
                 <constraint firstAttribute="bottom" secondItem="pAg-JO-aHz" secondAttribute="bottom" id="him-Yv-Ad4"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cfm-QH-zbm" secondAttribute="trailing" constant="8" id="jMu-5L-wfy"/>
                 <constraint firstItem="pAg-JO-aHz" firstAttribute="leading" secondItem="cfm-QH-zbm" secondAttribute="trailing" id="mTI-IY-UcA"/>
                 <constraint firstItem="pAg-JO-aHz" firstAttribute="top" secondItem="GU3-78-Bdh" secondAttribute="top" id="xHl-TD-HaZ"/>
             </constraints>
@@ -55,7 +57,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                    <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
