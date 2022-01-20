@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.summary           = 'Quickly create a view with tags with an option to delete'
   s.source            = { :git => 'https://github.com/sdpjswl/ASJTagsView.git', :tag => s.version }
   s.source_files      = 'ASJTagsView/*.{h,m}'
-  s.resources         = ['Resources/*.png', 'Resources/*.xib'] }
+  s.resources         = ['Resources/*.png', 'Resources/*.xib']
   s.requires_arc      = true
 end
