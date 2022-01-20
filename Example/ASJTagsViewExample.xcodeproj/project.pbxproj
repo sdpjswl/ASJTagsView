@@ -54,6 +54,7 @@
 			children = (
 				C019C7951D41B6DE00C7F9FD /* ASJTag.h */,
 				C019C7961D41B6DE00C7F9FD /* ASJTag.m */,
+				C019C7971D41B6DE00C7F9FD /* ASJTag.xib */,
 				C019C7981D41B6DE00C7F9FD /* ASJTagsView.h */,
 				C019C7991D41B6DE00C7F9FD /* ASJTagsView.m */,
 				C084848D2799F90700251E9A /* Resources */,
@@ -108,7 +109,6 @@
 		C084848D2799F90700251E9A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C019C7971D41B6DE00C7F9FD /* ASJTag.xib */,
 				C084848B2799F8FD00251E9A /* cross@2x.png */,
 				C084848C2799F8FD00251E9A /* cross@3x.png */,
 			);
