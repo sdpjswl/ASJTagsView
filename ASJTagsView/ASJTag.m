@@ -39,6 +39,7 @@
 
 - (void)awakeFromNib
 {
+  [super awakeFromNib];
   self.crossImage = self.defaultCrossImage;
 }
 

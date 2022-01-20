@@ -331,15 +331,15 @@
 {
   [tagView setTapBlock:^(NSString *tagText, NSInteger idx)
    {
-     if (_tapBlock) {
-       _tapBlock(tagText, idx);
+    if (self->_tapBlock) {
+       self->_tapBlock(tagText, idx);
      }
    }];
   
   [tagView setDeleteBlock:^(NSString *tagText, NSInteger idx)
    {
-     if (_deleteBlock) {
-       _deleteBlock(tagText, idx);
+    if (self->_deleteBlock) {
+      self->_deleteBlock(tagText, idx);
      }
    }];
 }

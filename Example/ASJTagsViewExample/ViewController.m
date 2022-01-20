@@ -46,16 +46,16 @@
   __weak typeof(self) weakSelf = self;
   [_tagsView setTapBlock:^(NSString *tagText, NSInteger idx)
    {
-     NSString *message = [NSString stringWithFormat:@"You tapped: %@", tagText];
-     [weakSelf showAlertMessage:message];
-   }];
+    NSString *message = [NSString stringWithFormat:@"You tapped: %@", tagText];
+    [weakSelf showAlertMessage:message];
+  }];
   
   [_tagsView setDeleteBlock:^(NSString *tagText, NSInteger idx)
    {
-     NSString *message = [NSString stringWithFormat:@"You deleted: %@", tagText];
-     [weakSelf showAlertMessage:message];
-     [weakSelf.tagsView deleteTagAtIndex:idx];
-   }];
+    NSString *message = [NSString stringWithFormat:@"You deleted: %@", tagText];
+    [weakSelf showAlertMessage:message];
+    [weakSelf.tagsView deleteTagAtIndex:idx];
+  }];
 }
 
 - (void)showAlertMessage:(NSString *)message
