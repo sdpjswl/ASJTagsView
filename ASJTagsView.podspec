@@ -4,7 +4,7 @@
   "summary": "Quickly create a view with tags with an option to delete",
   "homepage": "https://github.com/sdpjswl/ASJTagsView",
   "license": "MIT",
-  "authors: {
+  "authors": {
     "Sudeep": "sdpjswl1@gmail.com"
   },
   "source": {
