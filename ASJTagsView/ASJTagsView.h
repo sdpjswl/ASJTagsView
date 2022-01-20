@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, TagColorTheme)
 /**
  *  Font for the tags' text.
  */
-@property (nullable, assign, nonatomic) UIFont *tagFont;
+@property (nullable, strong, nonatomic) UIFont *tagFont;
 
 /**
  *  Set the border width for individual tags.
