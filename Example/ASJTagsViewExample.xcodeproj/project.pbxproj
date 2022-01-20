@@ -16,6 +16,7 @@
 		C019C79A1D41B6DE00C7F9FD /* ASJTag.m in Sources */ = {isa = PBXBuildFile; fileRef = C019C7961D41B6DE00C7F9FD /* ASJTag.m */; };
 		C019C79B1D41B6DE00C7F9FD /* ASJTag.xib in Resources */ = {isa = PBXBuildFile; fileRef = C019C7971D41B6DE00C7F9FD /* ASJTag.xib */; };
 		C019C79C1D41B6DE00C7F9FD /* ASJTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C019C7991D41B6DE00C7F9FD /* ASJTagsView.m */; };
+		C06FB682279A086E0099275F /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C06FB681279A086E0099275F /* Resources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +35,7 @@
 		C019C7971D41B6DE00C7F9FD /* ASJTag.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASJTag.xib; sourceTree = "<group>"; };
 		C019C7981D41B6DE00C7F9FD /* ASJTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASJTagsView.h; sourceTree = "<group>"; };
 		C019C7991D41B6DE00C7F9FD /* ASJTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASJTagsView.m; sourceTree = "<group>"; };
-		C084848B2799F8FD00251E9A /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
-		C084848C2799F8FD00251E9A /* cross@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@3x.png"; sourceTree = "<group>"; };
+		C06FB681279A086E0099275F /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 				C019C7971D41B6DE00C7F9FD /* ASJTag.xib */,
 				C019C7981D41B6DE00C7F9FD /* ASJTagsView.h */,
 				C019C7991D41B6DE00C7F9FD /* ASJTagsView.m */,
-				C084848D2799F90700251E9A /* Resources */,
+				C06FB681279A086E0099275F /* Resources.bundle */,
 			);
 			name = ASJTagsView;
 			path = ../../ASJTagsView;
@@ -104,15 +104,6 @@
 				6BE0CE681CE3123A007BB6A6 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C084848D2799F90700251E9A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C084848B2799F8FD00251E9A /* cross@2x.png */,
-				C084848C2799F8FD00251E9A /* cross@3x.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C06FB682279A086E0099275F /* Resources.bundle in Resources */,
 				6BE0CE771CE3123A007BB6A6 /* LaunchScreen.storyboard in Resources */,
 				6BE0CE741CE3123A007BB6A6 /* Assets.xcassets in Resources */,
 				6BE0CE721CE3123A007BB6A6 /* Main.storyboard in Resources */,
