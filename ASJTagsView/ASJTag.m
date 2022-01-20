@@ -80,6 +80,7 @@
   _tagText = tagText;
   
   [UIView performWithoutAnimation:^{
+    [_tagButton.titleLabel setFont:_tagFont];
     [_tagButton setTitle:tagText forState:UIControlStateNormal];
     [_tagButton layoutIfNeeded];
   }];
@@ -101,15 +102,6 @@
   }
   _crossImage = crossImage;
   [_deleteButton setImage:crossImage forState:UIControlStateNormal];
-}
-
-- (void)setTagFont:(UIFont *)tagFont
-{
-  if (!tagFont) {
-    return;
-  }
-  _tagFont = tagFont;
-  _tagButton.titleLabel.font = tagFont;
 }
 
 @end
