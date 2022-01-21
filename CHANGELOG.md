@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.4](https://github.com//ASJTagsView/releases/tag/1.4)
+## [1.4](https://github.com/sdpjswl/ASJTagsView/releases/tag/1.4)
 Released on Friday, 21 Jan, 2022.
 
 #### Added
