@@ -86,7 +86,7 @@ Called when a cross (delete button) is tapped. Inside the block, you will receiv
 # Credits
 
 - Cross icon taken from Google [Material Icons](https://design.google.com/icons/#ic_clear).
-- All tag color themes except the default taken from [Ben Gordon's] (https://github.com/bennyguitar) [Colours](https://github.com/bennyguitar/Colours).
+- All tag color themes except the default taken from [Ben Gordon's](https://github.com/bennyguitar) [Colours](https://github.com/bennyguitar/Colours).
 
 # To-do
 
