@@ -69,9 +69,9 @@
 				6BE0CE661CE3123A007BB6A6 /* ASJTagsViewExample */,
 				6BE0CE651CE3123A007BB6A6 /* Products */,
 			);
-			indentWidth = 2;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 2;
+			tabWidth = 4;
 		};
 		6BE0CE651CE3123A007BB6A6 /* Products */ = {
 			isa = PBXGroup;
@@ -90,9 +90,8 @@
 				6BE0CE6D1CE3123A007BB6A6 /* ViewController.h */,
 				6BE0CE6E1CE3123A007BB6A6 /* ViewController.m */,
 				6BE0CE701CE3123A007BB6A6 /* Main.storyboard */,
-				6BE0CE731CE3123A007BB6A6 /* Assets.xcassets */,
 				6BE0CE751CE3123A007BB6A6 /* LaunchScreen.storyboard */,
-				6BE0CE781CE3123A007BB6A6 /* Info.plist */,
+				6BE0CE731CE3123A007BB6A6 /* Assets.xcassets */,
 				6BE0CE671CE3123A007BB6A6 /* Supporting Files */,
 			);
 			path = ASJTagsViewExample;
@@ -101,6 +100,7 @@
 		6BE0CE671CE3123A007BB6A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BE0CE781CE3123A007BB6A6 /* Info.plist */,
 				6BE0CE681CE3123A007BB6A6 /* main.m */,
 			);
 			name = "Supporting Files";

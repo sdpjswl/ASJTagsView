@@ -34,13 +34,13 @@ typedef void (^TagBlock)(NSString *tagText, NSInteger idx);
  */
 typedef NS_ENUM(NSInteger, TagColorTheme)
 {
-  TagColorThemeDefault,
-  TagColorThemeChartreuse,
-  TagColorThemeCoolGray,
-  TagColorThemeIndigo,
-  TagColorThemePlum,
-  TagColorThemeRaspberry,
-  TagColorThemeStrawberry
+    TagColorThemeDefault,
+    TagColorThemeChartreuse,
+    TagColorThemeCoolGray,
+    TagColorThemeIndigo,
+    TagColorThemePlum,
+    TagColorThemeRaspberry,
+    TagColorThemeStrawberry
 };
 
 @interface ASJTagsView : UIScrollView

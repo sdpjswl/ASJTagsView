@@ -39,83 +39,83 @@
 
 - (void)awakeFromNib
 {
-  [super awakeFromNib];
-  self.crossImage = self.defaultCrossImage;
+    [super awakeFromNib];
+    self.crossImage = self.defaultCrossImage;
 }
 
 - (UIImage *)defaultCrossImage
 {
-  NSString *resourcesBundlePath = [self.tagsBundle pathForResource:@"Resources" ofType:@"bundle"];
-  NSBundle *resourcesBundle = nil;
-  if (resourcesBundlePath != nil) {
-    resourcesBundle = [NSBundle bundleWithPath:resourcesBundlePath];
-  }
-  else {
-    resourcesBundle = self.tagsBundle;
-  }
-  return [UIImage imageNamed:@"cross" inBundle:resourcesBundle compatibleWithTraitCollection:nil];
+    NSString *resourcesBundlePath = [self.tagsBundle pathForResource:@"Resources" ofType:@"bundle"];
+    NSBundle *resourcesBundle = nil;
+    if (resourcesBundlePath != nil) {
+        resourcesBundle = [NSBundle bundleWithPath:resourcesBundlePath];
+    }
+    else {
+        resourcesBundle = self.tagsBundle;
+    }
+    return [UIImage imageNamed:@"cross" inBundle:resourcesBundle compatibleWithTraitCollection:nil];
 }
 
 - (NSBundle *)tagsBundle
 {
-  return [NSBundle bundleForClass:[self class]];
+    return [NSBundle bundleForClass:[self class]];
 }
 
 #pragma mark - IBActions
 
 - (IBAction)tagTapped:(UIButton *)sender
 {
-  if (_tapBlock) {
-    _tapBlock(sender.titleLabel.text, self.tag);
-  }
+    if (_tapBlock) {
+        _tapBlock(sender.titleLabel.text, self.tag);
+    }
 }
 
 - (IBAction)deleteTapped:(UIButton *)sender
 {
-  if (_deleteBlock) {
-    _deleteBlock(_tagButton.titleLabel.text, self.tag);
-  }
+    if (_deleteBlock) {
+        _deleteBlock(_tagButton.titleLabel.text, self.tag);
+    }
 }
 
 #pragma mark - Property setters
 
 - (void)setTagText:(NSString *)tagText
 {
-  if (!tagText) {
-    return;
-  }
-  _tagText = tagText;
-  
-  [UIView performWithoutAnimation:^{
-    [_tagButton.titleLabel setFont:_tagFont];
-    [_tagButton setTitle:tagText forState:UIControlStateNormal];
-    [_tagButton layoutIfNeeded];
-  }];
+    if (!tagText) {
+        return;
+    }
+    _tagText = tagText;
+    
+    [UIView performWithoutAnimation:^{
+        [_tagButton.titleLabel setFont:_tagFont];
+        [_tagButton setTitle:tagText forState:UIControlStateNormal];
+        [_tagButton layoutIfNeeded];
+    }];
 }
 
 - (void)setTagTextColor:(UIColor *)tagTextColor
 {
-  if (!tagTextColor) {
-    return;
-  }
-  _tagTextColor = tagTextColor;
-  [_tagButton setTitleColor:tagTextColor forState:UIControlStateNormal];
+    if (!tagTextColor) {
+        return;
+    }
+    _tagTextColor = tagTextColor;
+    [_tagButton setTitleColor:tagTextColor forState:UIControlStateNormal];
 }
 
 - (void)setCrossImage:(UIImage *)crossImage
 {
-  if (!crossImage) {
-    return;
-  }
-  _crossImage = crossImage;
-  [_deleteButton setImage:crossImage forState:UIControlStateNormal];
+    if (!crossImage) {
+        return;
+    }
+    _crossImage = crossImage;
+    [_deleteButton setImage:crossImage forState:UIControlStateNormal];
 }
 
 - (void)setShowDeleteButton:(BOOL)showDeleteButton
 {
-  if (showDeleteButton == NO) {
-    [_deleteButton removeFromSuperview];
-  }
+    if (showDeleteButton == NO) {
+        [_deleteButton removeFromSuperview];
+    }
 }
 
 @end
