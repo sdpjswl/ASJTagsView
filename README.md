@@ -28,7 +28,7 @@ There are a number of `IBInspectable` properties that you can use to do some qui
 @property (assign, nonatomic) IBInspectable BOOL showDeleteButton;
 ```
 
-The 'tagColorTheme' property lets you quickly skin your tags by choosing from a set of predefined themes. All colors except the default have been taken from [Ben Gordon's] (https://github.com/bennyguitar) [Colours](https://github.com/bennyguitar/Colours).
+The 'tagColorTheme' property lets you quickly skin your tags by choosing from a set of predefined themes. All colors except the default have been taken from [Ben Gordon's](https://github.com/bennyguitar) [Colours](https://github.com/bennyguitar/Colours).
 
 ![alt tag](Images/ColorThemes.png)
 
